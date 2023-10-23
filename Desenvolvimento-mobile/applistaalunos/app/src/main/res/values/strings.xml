@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">App lista alunos</string>
+    <string name="txt_hint_edit_primeiro_nome">Primeiro Nome</string>
+    <string name="txt_hint_edit_sobrenome">Sobrenome</string>
+    <string name="txt_hint_edit_matricula">Matricula</string>
+    <string name="txt_hint_edit_cpf">CPF</string>
+    <string name="txt_button_limpar">LIMPAR</string>
+    <string name="txt_button_salvar">SALVAR</string>
+    <string name="txt_button_finalizar">FINALIZAR</string>
+</resources>

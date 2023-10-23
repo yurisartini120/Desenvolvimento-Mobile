@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="28dp"
+        android:text="Lista Alunos TDS - 0025"
+        android:textSize="20sp"
+        app:barrierMargin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_marginBaseline="50dp" />
+
+    <EditText
+        android:id="@+id/primeiro_nome"
+        android:layout_width="370dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="84dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_primeiro_nome"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        app:layout_marginBaseline="10dp" />
+
+    <EditText
+        android:id="@+id/sobrenome"
+        android:layout_width="370dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_sobrenome"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/primeiro_nome"
+        app:layout_marginBaseline="10dp" />
+
+    <EditText
+        android:id="@+id/matricula"
+        android:layout_width="370dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_matricula"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sobrenome"
+        app:layout_marginBaseline="10dp" />
+
+    <EditText
+        android:id="@+id/cpf"
+        android:layout_width="370dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_cpf"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/matricula"
+        app:layout_marginBaseline="10dp" />
+
+    <Button
+        android:id="@+id/limpar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="#20b2aa"
+        android:backgroundTintMode="add"
+        android:text="@string/txt_button_limpar"
+        app:layout_constraintBottom_toTopOf="@+id/finalizar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cpf" />
+
+    <Button
+        android:id="@+id/salvar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="#20b2aa"
+        android:backgroundTintMode="add"
+        android:text="@string/txt_button_salvar"
+        app:layout_constraintBottom_toTopOf="@+id/finalizar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintStart_toEndOf="@+id/limpar"
+        app:layout_constraintTop_toBottomOf="@+id/cpf" />
+
+    <Button
+        android:id="@+id/finalizar"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:backgroundTint="#00ced1"
+        android:text="@string/txt_button_finalizar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cpf"
+        app:rippleColor="#00ced1"
+        app:strokeColor="#00ced1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
