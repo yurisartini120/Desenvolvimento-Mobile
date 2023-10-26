@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         dadosOutraPessoa += OutraPessoa.getPrimeiroNome();
         dadosOutraPessoa += "Sobrenome: ";
         dadosOutraPessoa += OutraPessoa.getSobrenome();
-        dadosOutraPessoa += "Matricula";
+        dadosOutraPessoa += "Matricula: ";
         dadosOutraPessoa += OutraPessoa.getMatricula();
         dadosOutraPessoa += "cpf: ";
         dadosOutraPessoa += OutraPessoa.getCpf();
