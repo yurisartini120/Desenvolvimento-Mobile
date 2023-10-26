@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".View.MainActivity">
 
     <TextView
         android:id="@+id/titulo"
@@ -19,7 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_marginBaseline="50dp" />
-
     <EditText
         android:id="@+id/primeiro_nome"
         android:layout_width="370dp"
