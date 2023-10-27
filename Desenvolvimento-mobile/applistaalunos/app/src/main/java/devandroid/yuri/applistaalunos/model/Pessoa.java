@@ -43,4 +43,14 @@ public class Pessoa {
     public void setCpf(String cpf) {
         this.Cpf = cpf;
     }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "PrimeiroNome='" + PrimeiroNome + '\'' +
+                ", Sobrenome='" + Sobrenome + '\'' +
+                ", Matricula='" + Matricula + '\'' +
+                ", Cpf='" + Cpf + '\'' +
+                '}';
+    }
 }

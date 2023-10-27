@@ -3,6 +3,11 @@ package devandroid.yuri.applistaalunos.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import devandroid.yuri.applistaalunos.R;
 
@@ -16,7 +21,14 @@ public class MainActivity extends AppCompatActivity {
     String dadosPessoa;
     String dadosOutraPessoa;
 
+    EditText editNome;
+    EditText editSobrenome;
+    EditText editMatricula;
+    EditText editCpf;
 
+    Button btnLimpar;
+    Button btnSalvar;
+    Button btnFinalizar;
 
 
     @Override
@@ -34,12 +46,63 @@ public class MainActivity extends AppCompatActivity {
 
         //outraPessoa
         OutraPessoa = new Pessoa();
-
+/*
         OutraPessoa.setPrimeiroNome("Ayla");
         OutraPessoa.setSobrenome("Sartini");
         OutraPessoa.setMatricula("45878965");
-        OutraPessoa.setCpf("1368524487");
+        OutraPessoa.setCpf("1368524487");*/
 
+
+        editNome = findViewById(R.id.editNome);
+        editSobrenome = findViewById(R.id.editSobrenome);
+        editMatricula = findViewById(R.id.editMatricula);
+        editCpf = findViewById(R.id.editCpf);
+
+        btnLimpar = findViewById(R.id.btnLimpar);
+        btnSalvar = findViewById(R.id.btnSalvar);
+        btnFinalizar = findViewById(R.id.btnFinalizar);
+
+        editNome.setText(pessoa.getPrimeiroNome());
+        editSobrenome.setText(pessoa.getSobrenome());
+        editMatricula.setText(pessoa.getMatricula());
+        editCpf.setText(pessoa.getCpf());
+
+        btnLimpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                editNome.setText("");
+                editSobrenome.setText("");
+                editMatricula.setText("");
+                editCpf.setText("");
+
+
+            }
+        });
+
+        btnFinalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText( MainActivity.this, "Aplicativo Finalizado", Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
+
+        btnSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                OutraPessoa.setPrimeiroNome(editNome.getText().toString());
+                OutraPessoa.setSobrenome(editSobrenome.getText().toString());
+                OutraPessoa.setMatricula(editMatricula.getText().toString());
+                OutraPessoa.setCpf(editCpf.getText().toString());
+
+
+                Toast.makeText( MainActivity.this, "Dados Salvos", Toast.LENGTH_LONG).show();
+            }
+        });
+
+/*
         //dadosPessoa
         dadosPessoa = "Primeiro nome: ";
         dadosPessoa += pessoa.getPrimeiroNome();
@@ -60,7 +123,8 @@ public class MainActivity extends AppCompatActivity {
         dadosOutraPessoa += OutraPessoa.getMatricula();
         dadosOutraPessoa += "cpf: ";
         dadosOutraPessoa += OutraPessoa.getCpf();
-
-        int parada = 0;
+*/
+        Log.i("POOAndroid",pessoa.toString());
+        Log.i("POOAndroid",OutraPessoa.toString());
     }
 }

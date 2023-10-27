@@ -19,8 +19,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_marginBaseline="50dp" />
+
     <EditText
-        android:id="@+id/primeiro_nome"
+        android:id="@+id/editNome"
         android:layout_width="370dp"
         android:layout_height="48dp"
         android:layout_marginTop="84dp"
@@ -34,7 +35,7 @@
         app:layout_marginBaseline="10dp" />
 
     <EditText
-        android:id="@+id/sobrenome"
+        android:id="@+id/editSobrenome"
         android:layout_width="370dp"
         android:layout_height="48dp"
         android:layout_marginTop="12dp"
@@ -44,11 +45,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/primeiro_nome"
+        app:layout_constraintTop_toBottomOf="@+id/editNome"
         app:layout_marginBaseline="10dp" />
 
     <EditText
-        android:id="@+id/matricula"
+        android:id="@+id/editMatricula"
         android:layout_width="370dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
@@ -58,11 +59,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sobrenome"
+        app:layout_constraintTop_toBottomOf="@+id/editSobrenome"
         app:layout_marginBaseline="10dp" />
 
     <EditText
-        android:id="@+id/cpf"
+        android:id="@+id/editCpf"
         android:layout_width="370dp"
         android:layout_height="48dp"
         android:layout_marginTop="12dp"
@@ -72,11 +73,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/matricula"
+        app:layout_constraintTop_toBottomOf="@+id/editMatricula"
         app:layout_marginBaseline="10dp" />
 
     <Button
-        android:id="@+id/limpar"
+        android:id="@+id/btnLimpar"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -85,12 +86,12 @@
         android:backgroundTint="#20b2aa"
         android:backgroundTintMode="add"
         android:text="@string/txt_button_limpar"
-        app:layout_constraintBottom_toTopOf="@+id/finalizar"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cpf" />
+        app:layout_constraintTop_toBottomOf="@+id/editCpf" />
 
     <Button
-        android:id="@+id/salvar"
+        android:id="@+id/btnSalvar"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="116dp"
@@ -99,14 +100,14 @@
         android:backgroundTint="#20b2aa"
         android:backgroundTintMode="add"
         android:text="@string/txt_button_salvar"
-        app:layout_constraintBottom_toTopOf="@+id/finalizar"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.962"
-        app:layout_constraintStart_toEndOf="@+id/limpar"
-        app:layout_constraintTop_toBottomOf="@+id/cpf" />
+        app:layout_constraintStart_toEndOf="@+id/btnLimpar"
+        app:layout_constraintTop_toBottomOf="@+id/editCpf" />
 
     <Button
-        android:id="@+id/finalizar"
+        android:id="@+id/btnFinalizar"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="184dp"
@@ -115,7 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cpf"
+        app:layout_constraintTop_toBottomOf="@+id/editCpf"
         app:rippleColor="#00ced1"
         app:strokeColor="#00ced1" />
 
