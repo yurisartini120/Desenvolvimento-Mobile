@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         vincularComponentes();
         criarListeners();
     }
+
     private void vincularComponentes() {
         numero1EditText = findViewById(R.id.numero1EditText);
         numero2EditText = findViewById(R.id.numero2EditText);
