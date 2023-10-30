@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#87B4E1"
     tools:context=".view.MainActivity">
 
     <TextView
@@ -13,6 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Digite os dois números:"
+        android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,9 +23,9 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +38,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="number|numberSigned|numberDecimal"
+            android:textColor="#000000"
             android:textSize="36sp"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -46,6 +49,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="number|numberSigned|numberDecimal"
+            android:textColor="#000000"
             android:textSize="36sp"
             tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
@@ -54,9 +58,9 @@
         android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,6 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#4128E0"
             android:text="+"
             android:textSize="36sp" />
 
@@ -75,6 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#4128E0"
             android:text="-"
             android:textSize="36sp" />
 
@@ -83,6 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#4128E0"
             android:text="*"
             android:textSize="36sp" />
 
@@ -91,6 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#4128E0"
             android:text="/"
             android:textSize="36sp" />
     </LinearLayout>
@@ -99,9 +107,10 @@
         android:id="@+id/resultadoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="#000000"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
