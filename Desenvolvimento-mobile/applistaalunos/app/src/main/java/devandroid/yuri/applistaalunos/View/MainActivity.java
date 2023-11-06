@@ -2,6 +2,7 @@ package devandroid.yuri.applistaalunos.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,15 +12,19 @@ import android.widget.Toast;
 
 import devandroid.yuri.applistaalunos.R;
 
+import devandroid.yuri.applistaalunos.controller.pessoaController;
 import devandroid.yuri.applistaalunos.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
-    Pessoa pessoa;
-    Pessoa OutraPessoa;
+    SharedPreferences preferences;
 
-    String dadosPessoa;
-    String dadosOutraPessoa;
+    public static final String new_preferences = "pref_lista";
+
+    pessoaController controller;
+
+    Pessoa pessoa;
+
 
     EditText editNome;
     EditText editSobrenome;
@@ -31,26 +36,37 @@ public class MainActivity extends AppCompatActivity {
     Button btnFinalizar;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        preferences = getSharedPreferences(new_preferences, 0);
+        SharedPreferences.Editor listaAlunos = preferences.edit();
+
+
+        controller = new pessoaController();
+        controller.toString();
+
+
         //pessoa
         pessoa = new Pessoa();
 
-        pessoa.setPrimeiroNome("Yuri");
-        pessoa.setSobrenome("Sartini Coelho");
-        pessoa.setMatricula("12345678");
-        pessoa.setCpf("13685245689");
+        pessoa.setPrimeiroNome(preferences.getString("primeiroNome", "NA"));
+        pessoa.setSobrenome(preferences.getString("sobrenome", "NA"));
+        pessoa.setMatricula(preferences.getString("matricula", "NA"));
+        pessoa.setCpf(preferences.getString("cpf", "NA"));
+
+
+
+
 
         //outraPessoa
-        OutraPessoa = new Pessoa();
-/*
-        OutraPessoa.setPrimeiroNome("Ayla");
-        OutraPessoa.setSobrenome("Sartini");
-        OutraPessoa.setMatricula("45878965");
-        OutraPessoa.setCpf("1368524487");*/
+
+
+
 
 
         editNome = findViewById(R.id.editNome);
@@ -61,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
         btnFinalizar = findViewById(R.id.btnFinalizar);
+
 
         editNome.setText(pessoa.getPrimeiroNome());
         editSobrenome.setText(pessoa.getSobrenome());
@@ -92,39 +109,32 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                OutraPessoa.setPrimeiroNome(editNome.getText().toString());
-                OutraPessoa.setSobrenome(editSobrenome.getText().toString());
-                OutraPessoa.setMatricula(editMatricula.getText().toString());
-                OutraPessoa.setCpf(editCpf.getText().toString());
+                pessoa.setPrimeiroNome(editNome.getText().toString());
+                pessoa.setSobrenome(editSobrenome.getText().toString());
+                pessoa.setMatricula(editMatricula.getText().toString());
+                pessoa.setCpf(editCpf.getText().toString());
 
 
                 Toast.makeText( MainActivity.this, "Dados Salvos", Toast.LENGTH_LONG).show();
+
+                listaAlunos.putString("primeiroNome", pessoa.getPrimeiroNome());
+                listaAlunos.putString("sobrenome", pessoa.getSobrenome());
+                listaAlunos.putString("matricula", pessoa.getMatricula());
+                listaAlunos.putString("cpf", pessoa.getCpf());
+                listaAlunos.apply();
+
+
+
+                Pessoa Pessoa;
+                controller.salvar(pessoa);
+
+
             }
+
         });
 
-/*
-        //dadosPessoa
-        dadosPessoa = "Primeiro nome: ";
-        dadosPessoa += pessoa.getPrimeiroNome();
-        dadosPessoa += "Sobrenome: ";
-        dadosPessoa += pessoa.getSobrenome();
-        dadosPessoa += "Matricula: ";
-        dadosPessoa += pessoa.getMatricula();
-        dadosPessoa += "Cpf: ";
-        dadosPessoa += pessoa.getCpf();
 
-
-        //dadosOutraPessoa
-        dadosOutraPessoa = "Primeiro nome: ";
-        dadosOutraPessoa += OutraPessoa.getPrimeiroNome();
-        dadosOutraPessoa += "Sobrenome: ";
-        dadosOutraPessoa += OutraPessoa.getSobrenome();
-        dadosOutraPessoa += "Matricula: ";
-        dadosOutraPessoa += OutraPessoa.getMatricula();
-        dadosOutraPessoa += "cpf: ";
-        dadosOutraPessoa += OutraPessoa.getCpf();
-*/
         Log.i("POOAndroid",pessoa.toString());
-        Log.i("POOAndroid",OutraPessoa.toString());
+
     }
 }
