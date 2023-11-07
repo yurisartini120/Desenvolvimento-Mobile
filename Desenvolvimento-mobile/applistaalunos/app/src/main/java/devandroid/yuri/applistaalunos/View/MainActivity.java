@@ -18,6 +18,7 @@ import devandroid.yuri.applistaalunos.model.Pessoa;
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences preferences;
+    SharedPreferences.Editor listaAlunos;
 
     public static final String new_preferences = "pref_lista";
 
@@ -43,8 +44,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         preferences = getSharedPreferences(new_preferences, 0);
-        SharedPreferences.Editor listaAlunos = preferences.edit();
+        listaAlunos = preferences.edit();
 
 
         controller = new pessoaController();
@@ -93,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
                 editMatricula.setText("");
                 editCpf.setText("");
 
+                listaAlunos.clear();
+                listaAlunos.apply();
+
 
             }
         });
@@ -125,8 +130,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                Pessoa Pessoa;
+
                 controller.salvar(pessoa);
+
+
 
 
             }
