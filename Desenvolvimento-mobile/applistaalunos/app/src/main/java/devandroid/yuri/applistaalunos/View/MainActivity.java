@@ -17,10 +17,7 @@ import devandroid.yuri.applistaalunos.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
-    SharedPreferences preferences;
-    SharedPreferences.Editor listaAlunos;
 
-    public static final String new_preferences = "pref_lista";
 
     pessoaController controller;
 
@@ -38,43 +35,26 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-        preferences = getSharedPreferences(new_preferences, 0);
-        listaAlunos = preferences.edit();
-
-
-        controller = new pessoaController();
+        controller = new pessoaController(MainActivity.this);
         controller.toString();
 
 
-        //pessoa
         pessoa = new Pessoa();
 
-        pessoa.setPrimeiroNome(preferences.getString("primeiroNome", "NA"));
-        pessoa.setSobrenome(preferences.getString("sobrenome", "NA"));
-        pessoa.setMatricula(preferences.getString("matricula", "NA"));
-        pessoa.setCpf(preferences.getString("cpf", "NA"));
-
-
-
-
-
-        //outraPessoa
-
-
-
+        controller.buscar(pessoa);
 
 
         editNome = findViewById(R.id.editNome);
         editSobrenome = findViewById(R.id.editSobrenome);
         editMatricula = findViewById(R.id.editMatricula);
         editCpf = findViewById(R.id.editCpf);
+
 
         btnLimpar = findViewById(R.id.btnLimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
@@ -95,10 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 editMatricula.setText("");
                 editCpf.setText("");
 
-                listaAlunos.clear();
-                listaAlunos.apply();
-
-
+                controller.limpar();
             }
         });
 
@@ -122,22 +99,9 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText( MainActivity.this, "Dados Salvos", Toast.LENGTH_LONG).show();
 
-                listaAlunos.putString("primeiroNome", pessoa.getPrimeiroNome());
-                listaAlunos.putString("sobrenome", pessoa.getSobrenome());
-                listaAlunos.putString("matricula", pessoa.getMatricula());
-                listaAlunos.putString("cpf", pessoa.getCpf());
-                listaAlunos.apply();
-
-
-
-
                 controller.salvar(pessoa);
 
-
-
-
             }
-
         });
 
 

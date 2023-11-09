@@ -6,19 +6,27 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import devandroid.yuri.conversordemoedas.R;
+import devandroid.yuri.conversordemoedas.controller.PessoaController;
 
 public class MainActivity extends AppCompatActivity {
 
+    PessoaController controller;
+
+    TextView resultadoTextView;
     EditText valorEditText;
+
+
+
+    
 
     Button libraButton;
     Button pesoButton;
     Button euroButton;
     Button dolarButton;
 
-    TextView resultadoTextView;
 
 
     @Override
@@ -27,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         vincularComponetes();
         listeners();
+
     }
 
     private void vincularComponetes(){
@@ -50,16 +59,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void libra(){
-        String valorString = valorEditText.getText().toString();
 
-        double valor = Double.parseDouble(valorString);
-
-        double resultado = 6.12 * valor;
-
-        resultadoTextView.setText(String.valueOf(resultado));
-
+        controller.libra();
 
     }
 
