@@ -12,11 +12,14 @@ import devandroid.yuri.calculadora.R;
 public class MainActivity extends AppCompatActivity {
     private EditText numero1EditText;
     private EditText numero2EditText;
+
     private Button adicaoButton;
     private Button subtracaoButton;
     private Button multiplicacaoButton;
     private Button divisaoButton;
+
     private TextView resultadoTextView;
+
     private PessoaController calculadoraController;
 
     @Override

@@ -18,14 +18,12 @@ public class MainActivity extends AppCompatActivity {
     TextView resultadoTextView;
     EditText valorEditText;
 
-
-
-    
-
     Button libraButton;
     Button pesoButton;
     Button euroButton;
     Button dolarButton;
+
+
 
 
 
@@ -47,14 +45,16 @@ public class MainActivity extends AppCompatActivity {
         dolarButton = findViewById(R.id.dolarButton);
         resultadoTextView = findViewById(R.id.resultadoTextView);
 
+        controller = new PessoaController(valorEditText, resultadoTextView);
+
     }
 
     private  void listeners(){
 
-        libraButton.setOnClickListener(evt -> libra());
-        pesoButton.setOnClickListener(evt -> peso());
-        euroButton.setOnClickListener(evt-> euro());
-        dolarButton.setOnClickListener(evt -> dolar());
+        libraButton.setOnClickListener(evt -> controller.libra());
+        pesoButton.setOnClickListener(evt -> controller.peso());
+        euroButton.setOnClickListener(evt-> controller.euro());
+        dolarButton.setOnClickListener(evt -> controller.dolar());
 
     }
 
@@ -66,38 +66,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void peso(){
-
-        String valorString = valorEditText.getText().toString();
-
-        double valor = Double.parseDouble(valorString);
-
-        double resultado = 69.41 * valor;
-
-        resultadoTextView.setText(String.valueOf(resultado));
+        controller.peso();
 
     }
 
     private void euro(){
 
-        String valorString = valorEditText.getText().toString();
-
-        double valor = Double.parseDouble(valorString);
-
-        double resultado = 5.33 * valor;
-
-        resultadoTextView.setText(String.valueOf(resultado));
+      controller.euro();
 
     }
 
     private void dolar(){
 
-        String valorString = valorEditText.getText().toString();
-
-        double valor = Double.parseDouble(valorString);
-
-        double resultado = 5.04 * valor;
-
-        resultadoTextView.setText(String.valueOf(resultado));
+        controller.dolar();
 
     }
 
