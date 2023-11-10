@@ -29,6 +29,7 @@ public class pessoaController {
 
         Log.d("MVC_Controller", "Controller Iniciado");
         return super.toString();
+
     }
 
     public void salvar(Pessoa pessoa){
