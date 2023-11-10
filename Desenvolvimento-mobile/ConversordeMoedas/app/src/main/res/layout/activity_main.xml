@@ -13,7 +13,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="40dp"
         android:text="Convertor de moedas"
-        android:textColor="#000000"
+        android:textColor="#005796"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#00009f"
             android:ems="10"
             android:inputType="number|numberSigned|numberDecimal"
             android:textColor="#000000"
@@ -62,8 +63,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#4128E0"
+            android:backgroundTint="#3b1de1"
             android:text=" £"
+            android:textColor="#ceaff7"
             android:textSize="27sp" />
 
         <Button
@@ -71,8 +73,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#4128E0"
+            android:backgroundTint="#3b1de1"
             android:text="M$"
+            android:textColor="#ceaff7"
             android:textSize="27sp" />
 
 
@@ -81,8 +84,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#4128E0"
+            android:backgroundTint="#3b1de1"
             android:text="€"
+            android:textColor="#ceaff7"
             android:textSize="27sp" />
 
         <Button
@@ -90,8 +94,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#4128E0"
+            android:backgroundTint="#3b1de1"
             android:text="US$"
+            android:textColor="#ceaff7"
             android:textSize="26sp" />
     </LinearLayout>
 
