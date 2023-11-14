@@ -7,30 +7,65 @@
     tools:context=".view.MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Lista de Tarefas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnAdicionar"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
-        android:rotation="-1"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="52dp"
+        android:rotation="0"
         android:text="ADICIONAR"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="208dp" />
+        app:layout_constraintEnd_toStartOf="@+id/btnDeletar"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTarefa" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnDeletar"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="16dp"
         android:text="DELETAR"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="305dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTarefa" />
+
+    <Button
+        android:id="@+id/btnVerTarefas"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Ver Tarefas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDeletar"
+        app:layout_constraintVertical_bias="0.005" />
+
+    <EditText
+        android:id="@+id/editTarefa"
+        android:layout_width="350sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="48dp"
+        android:width="350sp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/txt_hint_edit_tarefa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
