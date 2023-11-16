@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".View.MainActivity">
 
+
+
+
+
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
@@ -138,9 +142,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Lista Spinner"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editCpf" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
