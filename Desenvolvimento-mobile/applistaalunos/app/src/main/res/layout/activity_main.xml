@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
 
 
     <TextView
@@ -18,10 +26,7 @@
         android:text="Lista Alunos TDS - 0025"
         android:textSize="20sp"
         app:barrierMargin="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center"
         app:layout_marginBaseline="50dp" />
 
     <EditText
@@ -32,10 +37,7 @@
         android:ems="10"
         android:hint="@string/txt_hint_edit_primeiro_nome"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        android:layout_gravity="center"
         app:layout_marginBaseline="10dp" />
 
     <EditText
@@ -46,10 +48,7 @@
         android:ems="10"
         android:hint="@string/txt_hint_edit_sobrenome"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNome"
+        android:layout_gravity="center"
         app:layout_marginBaseline="10dp" />
 
     <EditText
@@ -60,10 +59,7 @@
         android:ems="10"
         android:hint="@string/txt_hint_edit_matricula"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editSobrenome"
+        android:layout_gravity="center"
         app:layout_marginBaseline="10dp" />
 
     <EditText
@@ -74,79 +70,75 @@
         android:ems="10"
         android:hint="@string/txt_hint_edit_cpf"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editMatricula"
+        android:layout_gravity="center"
         app:layout_marginBaseline="10dp" />
 
-    <Button
-        android:id="@+id/btnLimpar"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginBottom="44dp"
-        android:backgroundTint="#20b2aa"
-        android:backgroundTintMode="add"
-        android:text="@string/txt_button_limpar"
-        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editCpf" />
+        <TextView
+            android:id="@+id/txtListaSpinner"
+            android:layout_width="100dp"
+            android:textSize="15dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Lista Spinner"
+            android:layout_gravity="center"
 
-    <Button
-        android:id="@+id/btnSalvar"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="44dp"
-        android:backgroundTint="#20b2aa"
-        android:backgroundTintMode="add"
-        android:text="@string/txt_button_salvar"
-        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.962"
-        app:layout_constraintStart_toEndOf="@+id/btnLimpar"
-        app:layout_constraintTop_toBottomOf="@+id/editCpf" />
+            />
 
-    <Button
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+
+            <Button
+                android:id="@+id/btnLimpar"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#20b2aa"
+                android:backgroundTintMode="add"
+                android:text="@string/txt_button_limpar" />
+
+            <Button
+                android:id="@+id/btnSalvar"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#20b2aa"
+                android:backgroundTintMode="add"
+                android:text="@string/txt_button_salvar" />
+        </LinearLayout>
+
+        <Button
         android:id="@+id/btnFinalizar"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="40dp"
+         android:layout_gravity="center"
         android:backgroundTint="#00ced1"
         android:text="@string/txt_button_finalizar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editCpf"
         app:rippleColor="#00ced1"
         app:strokeColor="#00ced1" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnLimpar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtListaSpinner"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/txtListaSpinner"
-        android:layout_width="410dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Lista Spinner"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editCpf" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </LinearLayout>
+    </ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
