@@ -42,8 +42,6 @@ public class pessoaController {
         listaAlunos.putString("cpf", pessoa.getCpf());
         listaAlunos.apply();
 
-
-
     }
 
     public Pessoa buscar(Pessoa pessoa){

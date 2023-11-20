@@ -32,10 +32,9 @@ public class MainActivity extends AppCompatActivity {
     List<String> nomeCurso;
 
 
-    EditText editNome;
-    EditText editSobrenome;
-    EditText editMatricula;
-    EditText editCpf;
+    EditText editGasolina;
+    EditText editEtanol;
+
 
     Button btnLimpar;
     Button btnSalvar;
@@ -65,10 +64,9 @@ public class MainActivity extends AppCompatActivity {
         controller.buscar(pessoa);
 
 
-        editNome = findViewById(R.id.editNome);
-        editSobrenome = findViewById(R.id.editSobrenome);
-        editMatricula = findViewById(R.id.editMatricula);
-        editCpf = findViewById(R.id.editCpf);
+        editGasolina = findViewById(R.id.editGasolina);
+        editEtanol = findViewById(R.id.editEtanol);
+
         spinner = findViewById(R.id.spinner);
 
 
@@ -78,10 +76,9 @@ public class MainActivity extends AppCompatActivity {
         btnFinalizar = findViewById(R.id.btnFinalizar);
 
 
-        editNome.setText(pessoa.getPrimeiroNome());
-        editSobrenome.setText(pessoa.getSobrenome());
-        editMatricula.setText(pessoa.getMatricula());
-        editCpf.setText(pessoa.getCpf());
+        editGasolina.setText(pessoa.getPrimeiroNome());
+        editEtanol.setText(pessoa.getSobrenome());
+
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,cursoController.dadosSpinner());
@@ -95,10 +92,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                editNome.setText("");
-                editSobrenome.setText("");
-                editMatricula.setText("");
-                editCpf.setText("");
+                editGasolina.setText("");
+                editEtanol.setText("");
+
 
                 controller.limpar();
             }
@@ -116,10 +112,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                pessoa.setPrimeiroNome(editNome.getText().toString());
-                pessoa.setSobrenome(editSobrenome.getText().toString());
-                pessoa.setMatricula(editMatricula.getText().toString());
-                pessoa.setCpf(editCpf.getText().toString());
+                pessoa.setPrimeiroNome(editGasolina.getText().toString());
+                pessoa.setSobrenome(editEtanol.getText().toString());
+
 
 
                 Toast.makeText( MainActivity.this, "Dados Salvos", Toast.LENGTH_LONG).show();
