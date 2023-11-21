@@ -78,10 +78,12 @@ public class MainActivity extends AppCompatActivity {
         btnFinalizar = findViewById(R.id.btnFinalizar);
 
 
+
         editNome.setText(pessoa.getPrimeiroNome());
         editSobrenome.setText(pessoa.getSobrenome());
         editMatricula.setText(pessoa.getMatricula());
         editCpf.setText(pessoa.getCpf());
+
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,cursoController.dadosSpinner());
