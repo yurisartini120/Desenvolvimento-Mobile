@@ -4,13 +4,20 @@ import static devandroid.yuri.appgaseta.controller.pessoaController.new_preferen
 
 import android.content.SharedPreferences;
 import android.util.Log;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
 import devandroid.yuri.appgaseta.View.GasEtaActivity;
-import devandroid.yuri.appgaseta.model.Cliente;
+import devandroid.yuri.appgaseta.model.Combustivel;
 
 public class GasEtaController {
+
+    private EditText editGasolina;
+    private EditText editEtanol;
+
+    private TextView txtResultado;
 
 
 
@@ -37,14 +44,62 @@ public class GasEtaController {
 
     }
 
-    public void salvar(Cliente cliente){
+    public void salvar(Combustivel cliente){
 
         Log.d("MVC_Controller", "Dados Salvos " + toString() );
 
 
         listaClientes.putInt("Gasolina", (int) cliente.getGasolina());
         listaClientes.putInt("Etanol",(int) cliente.getEtanol());
+
         listaClientes.apply();
 
     }
+
+    /*public void calcular(){
+
+
+        try{
+
+            double gasolina = Double.parseDouble(editGasolina.getText().toString());
+            double etanol = Double.parseDouble(editEtanol.getText().toString());
+
+
+
+            double valor = gasolina / etanol;
+
+            if (valor <= 0.7){
+
+                String resultado = "O melhor é abastecer com alcool";
+                txtResultado.setText(String.valueOf(resultado));
+
+            }else {
+
+                String resultado = "O melhor é abastecer com Gasolina";
+                txtResultado.setText(String.valueOf(resultado));
+
+            }
+
+
+
+
+
+
+
+        }catch (NumberFormatException e){
+            exibirMensagemErro("Digite números válidos");
+
+
+        }
+
+
+
+    }
+
+    private void exibirMensagemErro(String digite_números_válidos) {
+
+        Toast.makeText(editGasolina.getContext(), "erro", Toast.LENGTH_SHORT).show();
+        
+    }*/
+
 }
