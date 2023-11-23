@@ -31,9 +31,7 @@ public class GasEtaActivity extends AppCompatActivity {
     EditText editEtanol;
 
     TextView txtResultado;
-
-
-
+    
     Button btnCalcular;
     Button btnLimpar;
     Button btnSalvar;
@@ -73,12 +71,8 @@ public class GasEtaActivity extends AppCompatActivity {
         btnSalvar = findViewById(R.id.btnSalvar);
 
 
-
-
         //editEtanol.setText(cliente.getEtanol());
         //editGasolina.setText(cliente.getGasolina());
-
-
 
 
 
@@ -116,8 +110,6 @@ public class GasEtaActivity extends AppCompatActivity {
                 }
 
 
-
-
                 /*double gasolina = Double.parseDouble(editGasolina.getText().toString());
                 double etanol = Double.parseDouble(editEtanol.getText().toString());
 
@@ -145,9 +137,6 @@ public class GasEtaActivity extends AppCompatActivity {
 
             }
         });
-
-
-
 
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
@@ -204,6 +193,5 @@ public class GasEtaActivity extends AppCompatActivity {
         });
 
     }
-
 
 }
