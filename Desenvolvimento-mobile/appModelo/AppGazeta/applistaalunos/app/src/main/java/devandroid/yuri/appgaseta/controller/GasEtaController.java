@@ -1,6 +1,6 @@
 package devandroid.yuri.appgaseta.controller;
 
-import static devandroid.yuri.appgaseta.controller.pessoaController.new_preferences;
+import static devandroid.yuri.appgaseta.controller.GasEtaController.new_preferences;
 
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -14,6 +14,9 @@ import devandroid.yuri.appgaseta.model.Combustivel;
 
 public class GasEtaController {
 
+
+    public  static  final String new_preferences = "pref_lista";
+
     private EditText editGasolina;
     private EditText editEtanol;
 
@@ -25,6 +28,7 @@ public class GasEtaController {
     SharedPreferences.Editor listaClientes;
 
     public GasEtaController(GasEtaActivity gasEtaActivity) {
+
         preferences = gasEtaActivity.getSharedPreferences(new_preferences, 0);
         listaClientes = preferences.edit();
 
