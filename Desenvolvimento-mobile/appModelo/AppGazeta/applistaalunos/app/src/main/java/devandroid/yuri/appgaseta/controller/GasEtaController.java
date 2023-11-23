@@ -51,6 +51,7 @@ public class GasEtaController {
 
         listaClientes.putInt("Gasolina", (int) cliente.getGasolina());
         listaClientes.putInt("Etanol",(int) cliente.getEtanol());
+        listaClientes.putString("Resultado",cliente.getResultado());
 
         listaClientes.apply();
 

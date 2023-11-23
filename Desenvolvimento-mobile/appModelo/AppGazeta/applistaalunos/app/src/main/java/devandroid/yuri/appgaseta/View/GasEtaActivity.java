@@ -19,7 +19,6 @@ import devandroid.yuri.appgaseta.util.utilGasEta;
 public class GasEtaActivity extends AppCompatActivity {
 
 
-
     GasEtaController controller;
 
     Combustivel cliente;
@@ -31,7 +30,7 @@ public class GasEtaActivity extends AppCompatActivity {
     EditText editEtanol;
 
     TextView txtResultado;
-    
+
     Button btnCalcular;
     Button btnLimpar;
     Button btnSalvar;
@@ -134,7 +133,6 @@ public class GasEtaActivity extends AppCompatActivity {
                 //controller.calcular();*/
 
 
-
             }
         });
 
@@ -181,6 +179,7 @@ public class GasEtaActivity extends AppCompatActivity {
 
             cliente.setEtanol(Double.valueOf(editEtanol.getText().toString()));
             cliente.setGasolina(Double.valueOf(editGasolina.getText().toString()));
+            cliente.setResultado(txtResultado.getText().toString());
 
 
                 Toast.makeText(GasEtaActivity.this, "DADOS SALVOS", Toast.LENGTH_SHORT).show();
