@@ -2,47 +2,32 @@ package devandroid.yuri.appgaseta.model;
 
 public class Combustivel {
 
-    private Double Gasolina;
-    private Double Etanol;
-    private String resultado;
-
     private String nomeCombustivel;
+    private Double precoCombustivel;
+    private String recomendacao;
 
 
-    public Combustivel(){}
-
-    public double getGasolina() {
-        return Gasolina;
+    public String getNomeCombustivel() {
+        return nomeCombustivel;
     }
 
-    public String getResultado() {
-        return resultado;
+    public void setNomeCombustivel(String nomeCombustivel) {
+        this.nomeCombustivel = nomeCombustivel;
     }
 
-    public void setResultado(String resultado) {
-        this.resultado = resultado;
+    public double getPrecoCombustivel() {
+        return precoCombustivel;
     }
 
-    public void setGasolina(Double gasolina) {
-        this.Gasolina = gasolina;
+    public void setPrecoCombustivel(double precoCombustivel) {
+        this.precoCombustivel = Double.valueOf(precoCombustivel);
     }
 
-    public double getEtanol() {
-        return Etanol;
+    public String getRecomendacao() {
+        return recomendacao;
     }
 
-    public void setEtanol(Double etanol) {
-        this.Etanol = etanol;
-    }
-
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "Gasolina=" + Gasolina +
-                ", Etanol=" + Etanol +
-                '}';
-    }
-
-    public void setNomeCombustivel(String gasolina) {
+    public void setRecomendacao(String recomendacao) {
+        this.recomendacao = recomendacao;
     }
 }

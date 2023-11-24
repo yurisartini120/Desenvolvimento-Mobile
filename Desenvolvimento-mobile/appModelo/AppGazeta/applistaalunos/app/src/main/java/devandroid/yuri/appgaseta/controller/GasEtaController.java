@@ -1,7 +1,6 @@
 package devandroid.yuri.appgaseta.controller;
 
-import static devandroid.yuri.appgaseta.controller.GasEtaController.new_preferences;
-
+import android.content.ContentValues;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.EditText;
@@ -9,27 +8,29 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import devandroid.yuri.appgaseta.View.GasEtaActivity;
-import devandroid.yuri.appgaseta.model.Combustivel;
 
-public class GasEtaController {
+import devandroid.yuri.appgaseta.View.GasEtaActivity;
+import devandroid.yuri.appgaseta.database.GasEtaDB;
+import devandroid.yuri.appgaseta.model.Combustivel;
+import devandroid.yuri.appgaseta.model.GasEta;
+
+public class GasEtaController  extends GasEtaDB {
 
 
     public  static  final String new_preferences = "pref_lista";
 
-    private EditText editGasolina;
-    private EditText editEtanol;
 
-    private TextView txtResultado;
 
 
 
     SharedPreferences preferences;
     SharedPreferences.Editor listaClientes;
 
-    public GasEtaController(GasEtaActivity gasEtaActivity) {
+    public GasEtaController(GasEtaActivity activity) {
 
-        preferences = gasEtaActivity.getSharedPreferences(new_preferences, 0);
+        super(activity);
+
+        preferences = activity.getSharedPreferences(new_preferences, 0);
         listaClientes = preferences.edit();
 
     }
@@ -48,18 +49,31 @@ public class GasEtaController {
 
     }
 
-    public void salvar(Combustivel cliente){
+    public void salvar(Combustivel combustivel){
+
+
 
         Log.d("MVC_Controller", "Dados Salvos " + toString() );
 
 
-        listaClientes.putInt("Gasolina", (int) cliente.getGasolina());
-        listaClientes.putInt("Etanol",(int) cliente.getEtanol());
-        listaClientes.putString("Resultado",cliente.getResultado());
+        ContentValues dados = new ContentValues();
 
+        listaClientes.putString("combustivel", combustivel.getNomeCombustivel());
+        listaClientes.putFloat("precoCombustivel", (float) combustivel.getPrecoCombustivel());
+        listaClientes.putString("recomendacao",combustivel.getRecomendacao());
         listaClientes.apply();
 
+        dados.put("nomeCombustivel", combustivel.getNomeCombustivel());
+        dados.put("precoCombustivel", combustivel.getPrecoCombustivel());
+        dados.put("recomendações", combustivel.getRecomendacao());
+
+        salvarObejto("combustivel", dados);
+
+
+
     }
+
+
 
     /*public void calcular(){
 

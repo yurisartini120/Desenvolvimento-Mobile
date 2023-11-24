@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import devandroid.yuri.appgaseta.R;
 import devandroid.yuri.appgaseta.controller.GasEtaController;
 import devandroid.yuri.appgaseta.model.Combustivel;
+import devandroid.yuri.appgaseta.model.GasEta;
 import devandroid.yuri.appgaseta.util.utilGasEta;
 
 public class GasEtaActivity extends AppCompatActivity {
@@ -21,10 +22,11 @@ public class GasEtaActivity extends AppCompatActivity {
 
     GasEtaController controller;
 
-    Combustivel cliente;
+    GasEta cliente;
 
     Combustivel combustivelGasolina;
     Combustivel combustivelEtanol;
+
 
     EditText editGasolina;
     EditText editEtanol;
@@ -56,7 +58,7 @@ public class GasEtaActivity extends AppCompatActivity {
 
         controller = new GasEtaController(GasEtaActivity.this);
 
-        cliente = new Combustivel();
+        cliente = new GasEta();
 
 
         txtResultado = findViewById(R.id.txtResultado);
@@ -163,28 +165,26 @@ public class GasEtaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-               /* combustivelGasolina = new Combustivel();
+                combustivelGasolina = new Combustivel();
                 combustivelEtanol = new Combustivel();
 
                 combustivelGasolina.setNomeCombustivel("Gasolina");
-                combustivelGasolina.setGasolina(precoGasolina);
+                combustivelGasolina.setPrecoCombustivel(precoGasolina);
 
                 combustivelEtanol.setNomeCombustivel("Etanol");
-                combustivelEtanol.setEtanol(precoEtanol);
+                combustivelEtanol.setPrecoCombustivel(precoEtanol);
 
-                combustivelGasolina.setResultado(utilGasEta.calcularmelhorOpcao(precoGasolina,precoEtanol));
-                combustivelEtanol.setResultado(utilGasEta.calcularmelhorOpcao(precoGasolina,precoEtanol));*/
+                combustivelGasolina.setRecomendacao(utilGasEta.calcularmelhorOpcao(precoGasolina,precoEtanol));
+                combustivelEtanol.setRecomendacao(utilGasEta.calcularmelhorOpcao(precoGasolina,precoEtanol));
 
 
 
-            cliente.setEtanol(Double.valueOf(editEtanol.getText().toString()));
-            cliente.setGasolina(Double.valueOf(editGasolina.getText().toString()));
-            cliente.setResultado(txtResultado.getText().toString());
 
 
                 Toast.makeText(GasEtaActivity.this, "DADOS SALVOS", Toast.LENGTH_SHORT).show();
 
-            controller.salvar(cliente);
+            controller.salvar(combustivelGasolina);
+                controller.salvar(combustivelEtanol);
 
 
 
