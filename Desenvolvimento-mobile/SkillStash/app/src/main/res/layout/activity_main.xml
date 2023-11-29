@@ -1,19 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#001F3F"
+    tools:context=".view.MainActivity">
 
     <TextView
+        android:id="@+id/size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Skill Stash"
+        android:foregroundGravity="center"
+        android:text="Cursos"
+        android:textColor="@android:color/white"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.077" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/size"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdicionar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="16dp"
+            tools:ignore="ExtraText">
+
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:contentDescription=""
+                android:src="@drawable/mundocurso"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:contentDescription=""
+                android:src="@drawable/eletrotecnica"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:contentDescription=""
+                android:src="@drawable/python"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:contentDescription=""
+                android:src="@drawable/chef_shutter"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnAdicionar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Adicionar Curso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnDeletar"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        tools:ignore="NotSibling" />
+
+    <Button
+        android:id="@+id/btnDeletar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Deletar Curso"
+        app:layout_constraintStart_toEndOf="@+id/btnAdicionar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="16dp"
+        tools:ignore="NotSibling" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
