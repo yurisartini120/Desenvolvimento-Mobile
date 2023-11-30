@@ -36,8 +36,6 @@ public class AdicionarCursoActivity extends AppCompatActivity {
                 String descricao = editTextDescricao.getText().toString();
 
 
-
-
                 Curso curso = new Curso(nome, descricao);
 
 
