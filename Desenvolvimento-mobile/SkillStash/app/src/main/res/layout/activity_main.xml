@@ -45,7 +45,7 @@
                 android:id="@+id/imageButtonAcademico"
                 android:layout_width="160dp"
                 android:layout_height="200dp"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:contentDescription=""
                 android:src="@drawable/mundocurso"
                 tools:ignore="SpeakableTextPresentCheck" />
@@ -54,7 +54,7 @@
                 android:id="@+id/imageButtonEletrotecnica"
                 android:layout_width="160dp"
                 android:layout_height="200dp"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:contentDescription=""
                 android:src="@drawable/eletrotecnica"
                 tools:ignore="SpeakableTextPresentCheck" />
@@ -63,7 +63,7 @@
                 android:id="@+id/imageButtonPython"
                 android:layout_width="160dp"
                 android:layout_height="200dp"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:contentDescription=""
                 android:src="@drawable/python"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
@@ -72,7 +72,7 @@
                 android:id="@+id/imageButtonColinaria"
                 android:layout_width="160dp"
                 android:layout_height="200dp"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:contentDescription=""
                 android:src="@drawable/chef_shutter"
                 tools:ignore="SpeakableTextPresentCheck" />
