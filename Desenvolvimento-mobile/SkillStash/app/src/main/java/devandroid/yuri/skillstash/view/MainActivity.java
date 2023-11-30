@@ -79,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        imageButtonPython.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PythonActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
