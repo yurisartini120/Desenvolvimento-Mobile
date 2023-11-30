@@ -42,7 +42,7 @@
             tools:ignore="ExtraText">
 
             <ImageButton
-                android:id="@+id/imageButton1"
+                android:id="@+id/imageButtonAcademico"
                 android:layout_width="160dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
@@ -51,7 +51,7 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/imageButtonEletrotecnica"
                 android:layout_width="160dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
@@ -60,7 +60,7 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/imageButtonPython"
                 android:layout_width="160dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
@@ -69,7 +69,7 @@
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/imageButtonColinaria"
                 android:layout_width="160dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"

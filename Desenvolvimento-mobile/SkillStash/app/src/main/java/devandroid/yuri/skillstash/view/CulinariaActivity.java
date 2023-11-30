@@ -1,4 +1,4 @@
-package devandroid.yuri.skillstash;
+package devandroid.yuri.skillstash.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,16 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class AdicionarCursoActivity extends AppCompatActivity {
+import devandroid.yuri.skillstash.R;
+
+public class CulinariaActivity extends AppCompatActivity {
 
     Button btnVoltar;
-    Button btnSalvar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adicionar_curso);
+        setContentView(R.layout.activity_culinaria);
 
         btnVoltar = findViewById(R.id.btnVoltar);
 
@@ -26,6 +26,4 @@ public class AdicionarCursoActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }

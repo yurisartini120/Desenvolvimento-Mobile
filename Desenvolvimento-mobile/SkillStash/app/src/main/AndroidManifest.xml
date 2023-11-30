@@ -13,7 +13,28 @@
         android:theme="@style/Theme.SkillStash"
         tools:targetApi="31">
         <activity
-            android:name=".AdicionarCursoActivity"
+            android:name=".view.CulinariaActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".view.EletricaActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".view.AcademicoActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".view.AdicionarCursoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

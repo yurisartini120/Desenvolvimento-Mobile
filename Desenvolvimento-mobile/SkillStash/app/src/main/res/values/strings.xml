@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">SkillStash</string>
+    <string name="Academico">
+        Ensino fundamental completo.
+
+        Ensino Medio completo.
+    </string>
+
+    <string name="Eletrica">
+        Curso de EletroTecnica incompleto
+    </string>
+
+    <string name="Python">
+        Em Aprendizagem
+    </string>
+
+    <string name="Cozinha">
+        Perigo na cozinha
+    </string>
+
+
 </resources>

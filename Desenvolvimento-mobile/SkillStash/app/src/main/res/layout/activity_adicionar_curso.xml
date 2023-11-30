@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdicionarCursoActivity">
+    tools:context=".view.AdicionarCursoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,7 +12,7 @@
         android:background="#001F3F"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:context=".AdicionarCursoActivity"
+        tools:context=".view.AdicionarCursoActivity"
         tools:layout_editor_absoluteX="-16dp"
         tools:layout_editor_absoluteY="-134dp">
 
