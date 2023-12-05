@@ -1,5 +1,6 @@
 package devandroid.yuri.skillstash.view;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,9 +10,17 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import devandroid.yuri.skillstash.R;
+import devandroid.yuri.skillstash.database.SkillDB;
 import devandroid.yuri.skillstash.model.Curso;
 
 public class AdicionarCursoActivity extends AppCompatActivity {
+
+
+
+    SkillDB skillDB;
+
+
+
 
     EditText editTextNome;
     EditText editTextDescricao;
@@ -22,6 +31,8 @@ public class AdicionarCursoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar_curso);
+
+        skillDB = new SkillDB(this);
 
         editTextNome = findViewById(R.id.editTextNome);
         editTextDescricao = findViewById(R.id.editTextDescricao);
@@ -34,6 +45,14 @@ public class AdicionarCursoActivity extends AppCompatActivity {
 
                 String nome = editTextNome.getText().toString();
                 String descricao = editTextDescricao.getText().toString();
+
+                ContentValues dados = new ContentValues();
+
+                dados.put("nome", nome);
+                dados.put("descricao", descricao);
+
+
+                skillDB.salvarCurso("curso", dados);
 
 
                 Curso curso = new Curso(nome, descricao);
