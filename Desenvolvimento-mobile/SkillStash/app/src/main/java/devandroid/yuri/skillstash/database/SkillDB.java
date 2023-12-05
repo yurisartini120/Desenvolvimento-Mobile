@@ -105,6 +105,57 @@ public class SkillDB extends SQLiteOpenHelper {
         return cursos;
     }
 
-    
+    public void deletarCursos(){
+
+        SQLiteDatabase db = null;
+
+
+        try {
+            db = getWritableDatabase();
+            // Deleta todos os cursos
+
+            db.delete("curso", null, null);
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        } finally {
+
+            if (db != null) {
+
+                db.close();
+            }
+        }
+    }
+
+    public void deletarCurso(String nome){
+
+        SQLiteDatabase db = null;
+
+        try {
+            db = getWritableDatabase();
+
+            // Deleta um curso específico com base no nome
+
+            db.delete("curso", "nome=?", new String[]{nome});
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        } finally {
+
+            if (db != null) {
+
+                db.close();
+
+            }
+        }
+
+
+    }
+
+
 
 }
