@@ -6,10 +6,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import devandroid.yuri.skillstash.R;
@@ -19,6 +22,8 @@ import devandroid.yuri.skillstash.model.Curso;
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout linearLayout;
+
+    Spinner spinner;
 
     Button btnAdicionar;
     Button btnDeletar;
@@ -36,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        spinner = findViewById(R.id.spinner);
+
+
         skillDB = new SkillDB(this);
 
         linearLayout = findViewById(R.id.linearLayout);
@@ -48,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         btnAdicionar = findViewById(R.id.btnAdicionar);
         btnDeletar = findViewById(R.id.btnDeletar);
 
+
+
         btnAdicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         carregarCursos();
+
+        configurarSpinner();
 
 
         if (getIntent().hasExtra("curso")) {
@@ -120,6 +132,8 @@ public class MainActivity extends AppCompatActivity {
     }
     private void carregarCursos(){
 
+        linearLayout.removeAllViews();
+
         List<Curso> cursos = skillDB.obterCursos();
 
         for (Curso curso : cursos){
@@ -165,15 +179,15 @@ public class MainActivity extends AppCompatActivity {
 
                 if (!cursos.isEmpty()) {
 
-                    // Obter o último curso da lista
+
                     Curso ultimoCurso = cursos.get(cursos.size() - 1);
 
 
-                    // Deletar o último curso do banco de dados
                     skillDB.deletarCurso(ultimoCurso.getNome());
 
-                    // Atualizar a lista de cursos na MainActivity
+
                     carregarCursos();
+
                 } else {
                     // Adicione aqui a lógica para lidar com o caso em que não há cursos para deletar
                 }
@@ -182,6 +196,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+    }
+    private void configurarSpinner(){
+
+        List<Curso> cursos = skillDB.obterCursos();
+        List<String> nomeCursos = new ArrayList<>();
+
+        for (Curso curso : cursos){
+            nomeCursos.add(curso.getNome());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, nomeCursos);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(adapter);
 
     }
 }
