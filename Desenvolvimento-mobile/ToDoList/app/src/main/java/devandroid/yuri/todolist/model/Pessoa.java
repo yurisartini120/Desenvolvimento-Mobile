@@ -1,11 +1,15 @@
 package devandroid.yuri.todolist.model;
 
 public class Pessoa {
+    private String nome;
 
-    private String Tarefa;
+    public Pessoa(String nome) {
+        this.nome = nome;
+    }
 
-    public Pessoa(){}
+    public String getNome() {
+        return nome;
+    }
 
-
-
+    // Outros métodos e atributos conforme necessário
 }
