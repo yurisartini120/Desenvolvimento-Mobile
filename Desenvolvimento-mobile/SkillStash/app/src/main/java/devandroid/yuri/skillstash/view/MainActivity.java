@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -168,6 +169,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+        
         linearLayout.addView(newButton);
 
 
@@ -189,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                     carregarCursos();
 
                 } else {
-                    // Adicione aqui a lógica para lidar com o caso em que não há cursos para deletar
+                    Toast.makeText(MainActivity.this, "Não ha cursos para deletar", Toast.LENGTH_SHORT).show();
                 }
 
 
